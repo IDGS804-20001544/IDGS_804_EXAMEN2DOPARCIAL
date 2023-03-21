@@ -1,0 +1,42 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+<h1>Maestros</h1>
+    {% from "_macros.html" import render_field %}
+
+    <div class="container">
+        <div class="row">
+            <a href="{{ url_for('ma.insert_maestro') }}" class="btn btn-success">
+                <i class="icon-plus-sign icon-white"></i> Agregar</a>
+            <table class="table table">
+                <thead>
+                    <tr>
+                        <th>NOMBRE</th>
+                        <th>APELLIDO PATERNO</th>
+                        <th>APELLIDO MATERNO</th>
+                        <th>TELEFONO</th>
+                        <th>CORREO</th>
+                        <th>ELIMINAR</th>
+                        <th>MODIFICAR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ma in maestros %}
+                    <tr>
+                        <td>{{ma[1]}}</td>
+                        <td>{{ma[2]}}</td>
+                        <td>{{ma[3]}}</td>
+                        <td>{{ma[4]}}</td>
+                        <td>{{ma[5]}}</td>
+                        <td><a href="{{ url_for('ma.eliminar') }}?id={{ma[0]}}" class="btn btn-danger">
+                            <i class="icon-remove icon-white"></i> Eliminar</a></td>
+                        <td><a href="{{ url_for('ma.actualizar') }}?id={{ma[0]}}" class="btn btn-warning">
+                            <i class="icon-pencil icon-white"></i> Modificar</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
