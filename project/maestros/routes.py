@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for, jsonify
 from flask import Blueprint
 from project.models import db, Maestros
 import project.forms as forms
-from .db import get_connection
+from ..db import get_connection
 
 
 

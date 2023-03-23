@@ -12,7 +12,8 @@
                 <thead>
                     <tr>
                         <th>NOMBRE(S)</th>
-                        <th>APELLIDOS</th>
+                        <th>APELLIDO PATERNO</th>
+                        <th>APELLIDO MATERNO</th>
                         <th>CORREO</th>
                         <th>CARRERA</th>
                         <th>ACCIONES</th>
@@ -22,8 +23,8 @@
                     {% for alu in alumnos %}
                     <tr>
                         <td>{{alu.nombre}}</td>
-                        <td>{{alu.apaterno}} {{alu.amaterno}}
-                        </td>
+                        <td>{{alu.apaterno}}</td>
+                        <td>{{alu.amaterno}}</td>
                         <td>{{alu.email}}</td>
                         <td>{{alu.carrera}}</td>
                         <td><a href="{{ url_for('auth.eliminar') }}?id={{alu.id}}" class="btn btn-danger">

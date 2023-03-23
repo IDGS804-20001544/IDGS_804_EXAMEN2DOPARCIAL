@@ -23,10 +23,10 @@ def create_app():
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
-    from .alumnos import auth as alumnos_blueprint
+    from .alumnos.routes import auth as alumnos_blueprint
     app.register_blueprint(alumnos_blueprint)
     
-    from .maestros import ma as maestros_blueprint
+    from .maestros.routes import ma as maestros_blueprint
     app.register_blueprint(maestros_blueprint)
 
 
